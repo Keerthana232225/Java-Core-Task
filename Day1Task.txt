@@ -1,0 +1,79 @@
+1. 
+public class EvenNumbers {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+2.
+import java.util.Scanner;
+
+public class SimpleInterestCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter principal amount: ");
+        double principal = scanner.nextDouble();
+
+        System.out.print("Enter rate of interest (in %): ");
+        double rate = scanner.nextDouble();
+
+        System.out.print("Enter time period (in years): ");
+        double time = scanner.nextDouble();
+
+        if (principal > 0) {
+            if (rate > 0) {
+                if (time > 0) {
+                    double simpleInterest = (principal * rate * time) / 100;
+                    System.out.println("Simple Interest = " + simpleInterest);
+                } else {
+                    System.out.println("Time period must be greater than zero.");
+                }
+            } else {
+                System.out.println("Rate of interest must be greater than zero.");
+            }
+        } else {
+            System.out.println("Principal amount must be greater than zero.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+3.
+import java.util.Scanner;
+
+public class LeapYearChecker {
+
+    
+    public static boolean isLeapYear(int year) {
+       
+        if (year % 400 == 0) {
+            return true;
+        } else if (year % 4 == 0 && year % 100 != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+
+        if (isLeapYear(year)) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is NOT a leap year.");
+        }
+
+        scanner.close();
+    }
+}
